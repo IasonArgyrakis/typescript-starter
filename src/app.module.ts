@@ -12,6 +12,8 @@ import { PrismaModule } from './prisma/prisma.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { Department } from './departments/entities/department.entity';
+import { DepartmentUsersModule } from './department-users/department-users.module';
+import { DepartmentUsersModule } from './department-users/department-users.module';
 
 @Module({
   imports: [
@@ -25,7 +27,7 @@ import { Department } from './departments/entities/department.entity';
       entities: [User,Department],
       synchronize: true,
     }),
-    PrismaModule,UsersModule, AuthModule, DepartmentsModule],
+    PrismaModule,UsersModule, AuthModule, DepartmentsModule, DepartmentUsersModule],
   controllers: [AppController, UsersController],
   providers: [AppService, UsersService],
 })
