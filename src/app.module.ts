@@ -17,7 +17,7 @@ import { Department } from './departments/entities/department.entity';
   imports: [
       TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'postgres',
+      host: '0.0.0.0',
       port: 5432,
       username: 'username',
       password: 'password',
