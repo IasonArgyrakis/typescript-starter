@@ -10,6 +10,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model Department {
+  id    Int              @id @default(autoincrement())
+  title String
+  users DepartmentUser[]
+}
 
 model User {
   id          Int              @id @default(autoincrement())
@@ -23,11 +28,7 @@ model User {
   @@unique([firstName, lastName, afm])
 }
 
-model Department {
-  id    Int              @id @default(autoincrement())
-  title String
-  users DepartmentUser[]
-}
+
 
 model DepartmentUser {
   id           Int         @id @default(autoincrement())
